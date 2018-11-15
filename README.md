@@ -1,4 +1,4 @@
-ChaR-Analysis
+CharAnalysis-R
 =============
 
 An R version of CharAnalysis (the original "CharAnalysis" was developed by Phil Higuera
