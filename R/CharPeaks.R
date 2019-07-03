@@ -285,7 +285,10 @@ plot.SNI <- function(x, xlim=NULL, ylim=NULL,xlab=NULL,...) {
   peaks.ylim <- c(min(Charcoal.peak), max(Charcoal.peak))
   
   
-  par(mfrow=c(2,1), mar=c(0.5, 4, 0.5, 1), oma=c(5,1,1,1), cex=0.7)
+  
+  layout(mat=matrix(c(1, 2, 3, 3), nrow=2, ncol=2), heights=c(1,1), widths=c(2,1))
+  #layout.show(3)
+  par(mar=c(0.5, 4, 0.5, 0.5), oma=c(4,1,1,1), cex=0.7)
   plot(ageI, accI, type="h", col=grey(0.7), xlim=x.lim, ylim=y.lim,
        xlab="time (cal yr. BP)", ylab="CHAR (# cm^-2 yr^-1)", axes=F)
   lines(ageI, cBack, lwd=1.5, col="red")
@@ -303,7 +306,8 @@ plot.SNI <- function(x, xlim=NULL, ylim=NULL,xlab=NULL,...) {
   axis(1, at=seq(0, x.max, by=x.by), labels=T)
   axis(2)
   
+  par(mar=c(5,2,5,0))
   boxplot(x$threshFRI[ ,1:3], notch=T, boxwex=0.2, names=x$CHAR.sm$thresh.values[1:3],
-          ylab="FRI (years)")
+          xlab="Thresholds", ylab="FRI")
 }
 
